@@ -27,10 +27,27 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="d-flex px-2">
+          @guest
+            @if (Route::has('login'))
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}"><span>Iniciar Sesión</span></a>
+            </li>
+            @endif
+            @if (Route::has('register'))
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}"><span>Registrarse</span></a>
+            </li>
+            @endif
+          @else
+            <li class="nav-item">
+              <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+                @csrf
+              </form>
+              <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+            </li>
+          @endguest
+        </div>
       </div>
     </div>
   </nav>
