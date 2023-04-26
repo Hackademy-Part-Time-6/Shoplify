@@ -27,7 +27,7 @@
             <a class="nav-link disabled">Disabled</a>
           </li>
         </ul>
-        <div class="d-flex px-2">
+        <div class="d-flex px-2 list-unstyled">
           @guest
             @if (Route::has('login'))
             <li class="nav-item">
@@ -44,6 +44,7 @@
               <form id="logoutForm" action="{{ route('logout') }}" method="POST">
                 @csrf
               </form>
+              <button href="{{ route ('ads.create') }}">Insercion Anuncio</button>
               <a id="logoutBtn" class="nav-link" href="#">Salir</a>
             </li>
           @endguest
