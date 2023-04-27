@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -18,7 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/ads/create', [AdController::class,'create'])->name('ads.create');
+
+Route::get('/', [PublicController::class,'index'])->name('home');
+
+
+Route::get('/category/{category:name}/ads',[PublicController::class, 'adsByCategory'])->name('category.ads');
+
+Route::get('/ads/{ad}', [AdController::class,'show'])->name("ads.show");
 
