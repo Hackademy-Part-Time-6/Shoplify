@@ -14,18 +14,16 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              Categorias
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @foreach ($categories as $category )
+                  <li>
+                    <a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a>
+                  </li>
+                @endforeach
+          </li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
         </ul>
         <div class="d-flex px-2 list-unstyled">
           @guest

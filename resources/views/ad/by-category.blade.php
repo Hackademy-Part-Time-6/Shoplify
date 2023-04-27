@@ -1,6 +1,11 @@
 <x-layout>
-    <x-slot name="title">Shoplify -  ads</x-slot>
-    
+    <x-slot name="title">Shoplify - {{ $category->name }} ads</x-slot>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Anuncios por categoría: {{ $category->name }}</h1>
+            </div>
+        </div>
         <div class="row">
             @forelse($ads as $ad)
                 <div class="col-12 col-md-4">
@@ -12,8 +17,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}</h6>
                             <p class="card-text"> {{ $ad->body }}</p>
                             <div class="card-subtitle mb-2">
-                                <strong><a href="{{route('category.ads',$ad->category)}}">#{{$ad->category->name}}</a></strong>
-                                        
+                                <strong><a href="{{ route('category.ads',$ad->category) }}">#{{ $category->name}}</a></strong>
                                     <i>{{ $ad->created_at->format('d/m/y')}}</i>
                             </div>
                             <div class="card-subtitle mb-2">
@@ -32,4 +36,5 @@
                 @endforelse
             </div>
         </div>
+        {{$ads->links()}}
 </x-layout>
