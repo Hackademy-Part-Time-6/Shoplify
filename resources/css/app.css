@@ -1,1 +1,42 @@
 @import '~bootstrap/dist/css/bootstrap';
+
+/* Estilos para el botón "Iniciar Sesión" */
+.navbar .btn {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    padding: 6px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+  
+  .navbar .btn:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
+    scale: 1.1;
+}
+
+.logo {
+    color: green;
+    font-size: 2em;
+    transition: all 0.3s ease-in-out;
+}
+  
+.logo:hover {
+    color: rgb(74, 180, 74);
+    scale: 1.1;
+}
+
+.item_nav {
+    color: azure;
+    font-size: 1.4em;
+    transition: all 0.3s ease-in-out;
+}
+  
+.item_nav:hover {
+    color: azure;
+    scale: 1.1;
+}
