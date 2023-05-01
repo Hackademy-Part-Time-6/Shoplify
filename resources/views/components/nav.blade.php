@@ -8,10 +8,30 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item mx-2">
             <a class="nav-link item_nav" aria-current="page" href="{{ route('home') }}">Home</a>
+          </li>         
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{Auth::user()->name}}
+          </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            @if (Auth::user()->is_revisor)
+          <li>
+          <a class="dropdown-item" href="{{ route('revisor.home') }}">
+            Revisor
+          <span class="badge rounded-pill bg-danger">
+            {{\App\Models\Ad::ToBeRevisionedCount() }}
+          </span>
+          </a>
           </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link item_nav" href="#">Link</a>
+          @endif
+          <li>
+          <form id="logoutForm" action="{{route('logout')}}" method="POST">
+            @csrf
+          </form>
+          <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
           </li>
+          </ul>
+        </li>
           <li class="nav-item dropdown mx-2">
             <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Categorias

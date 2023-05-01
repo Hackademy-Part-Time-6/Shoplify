@@ -10,6 +10,7 @@
           <h5>Enlaces</h5>
           <ul class="list-unstyled">
             <li><a href="#">Inicio</a></li>
+            <li><a href="{{route('revisor.become')}}" class="btn btn-info">Work with us</a></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Productos</a></li>
             <li><a href="#">Contacto</a></li>
