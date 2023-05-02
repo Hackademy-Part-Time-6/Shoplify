@@ -3,17 +3,17 @@
       <div class="row">
         <div class="col-md-6">
           <h5>Contacto</h5>
-          <p>Teléfono: </p>
-          <p>Email: </p>
+          <p>Teléfono: +34 </p>
+          <p>Email: support.es@shoplify.com</p>
         </div>
         <div class="col-md-6">
           <h5>Enlaces</h5>
           <ul class="list-unstyled">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="{{route('revisor.become')}}" class="btn btn-info">Work with us</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#" class="link-style">Inicio</a></li>
+            <li><a href="{{route('revisor.become')}}" class="link-style">Work with us</a></li>
+            <li><a href="#" class="link-style">Nosotros</a></li>
+            <li><a href="#" class="link-style">Productos</a></li>
+            <li><a href="#" class="link-style">Contacto</a></li>
           </ul>
         </div>
       </div>

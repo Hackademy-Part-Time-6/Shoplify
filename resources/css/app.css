@@ -40,3 +40,7 @@
     color: azure;
     scale: 1.1;
 }
+
+.link-style {
+    text-decoration: none;
+}

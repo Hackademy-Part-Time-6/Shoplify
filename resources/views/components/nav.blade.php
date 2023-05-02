@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand logo mx-2" href="{{ route('home') }}">Shoplify</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,11 +30,9 @@
           @guest
               @if (Route::has('login'))
               <li class="nav-item">
-                  <a class="nav-link item_nav" href="{{route('login')}}"> {{('Iniciar sesión')}}
-                  </a>
+                <a class="nav-link item_nav" href="{{route('login')}}"> {{('Iniciar sesión')}}</a>
               </li>
               @endif
-
               @if (Route::has('register'))
 
               @endif
@@ -63,8 +61,8 @@
               </li>
             </ul>
           </li>
-             @endguest
+          @endguest
         </div>
       </div>
     </div>
-  </nav>
+</nav>

@@ -10,6 +10,8 @@
 </head>
 <body>
 
+    <x-nav />
+
     @if (session()->has('message'))
         <x-alert :type="session('message')['type']" :message="session('message')['text']" />
     @endif
@@ -17,15 +19,13 @@
     @if (session()->has('createAd'))
         <x-alert :type="session('createAd')['type']" :message="session('createAd')['text']"/>
     @endif
-
-    <x-nav />
-    <div>
+    <div class="container mt-5" style="height: 80vh">
         {{$slot}}
     </div>   
 
     <x-footer />
     @livewireScripts
     {{$script ?? ''}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

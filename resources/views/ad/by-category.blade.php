@@ -2,7 +2,7 @@
     <x-slot name="title">Shoplify - {{ $category->name }} ads</x-slot>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h1>Anuncios por categoría: {{ $category->name }}</h1>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-12">
+                <div class="col-12 text-center">
                     <h2>Uyy.. parece que no hay nada de esta categoría</h2>
                     <a href="{{ route('ads.create')}}" class="btn btn-success">Vende tu primer objeto</a>
                     o <a href="{{ route('home')}}" class="btn btn-primary">Vuelve a la home</a>
