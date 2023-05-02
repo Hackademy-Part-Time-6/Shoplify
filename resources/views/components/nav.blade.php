@@ -8,28 +8,9 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item mx-2">
             <a class="nav-link item_nav" aria-current="page" href="{{ route('home') }}">Home</a>
-          </li>         
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          {{Auth::user()->name}}
-          </a>
+          </li>  
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            @if (Auth::user()->is_revisor)
           <li>
-          <a class="dropdown-item" href="{{ route('revisor.home') }}">
-            Revisor
-          <span class="badge rounded-pill bg-danger">
-            {{\App\Models\Ad::ToBeRevisionedCount() }}
-          </span>
-          </a>
-          </li>
-          @endif
-          <li>
-          <form id="logoutForm" action="{{route('logout')}}" method="POST">
-            @csrf
-          </form>
-          <a id="logoutBtn" class="dropdown-item" href="#">Salir</a>
-          </li>
           </ul>
         </li>
           <li class="nav-item dropdown mx-2">
@@ -47,27 +28,42 @@
         </ul>
         <div class="d-flex px-2 list-unstyled">
           @guest
-            @if (Route::has('login'))
-            <li class="nav-item">
-              <a class="nav-link btn" href="{{ route('login') }}"><span>Iniciar Sesión</span></a>
-            </li>
-            @endif
-            @if (Route::has('register'))
-            <li class="nav-item">
-              <a class="nav-link btn" href="{{ route('register') }}"><span>Registrarse</span></a>
-            </li>
-            @endif
-          @else
-            <li class="nav-item">
-             <div class="d-flex justify-content-around">
-              <form id="logoutForm" action="{{ route('logout') }}" method="POST">
-                @csrf
-              </form>
-              <a class="mx-2 btn" href="{{ route('ads.create') }}">Insercion Anuncio</a>
-              <a class="mx-2 btn" id="logoutBtn" class="nav-link" href="{{ route('logout') }}">Salir</a>
-             </div>
-            </li>
-          @endguest
+              @if (Route::has('login'))
+              <li class="nav-item">
+                  <a class="nav-link item_nav" href="{{route('login')}}"> {{('Iniciar sesión')}}
+                  </a>
+              </li>
+              @endif
+
+              @if (Route::has('register'))
+
+              @endif
+
+              @else
+              <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle item_nav mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{Auth::user()->name}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              @if (Auth::user()->is_revisor)
+              <li>
+                <a class="dropdown-item" href="{{ route('revisor.home') }}">
+                  Revisor
+                  <span class="badge rounded-pill bg-danger">
+                    {{\App\Models\Ad::ToBeRevisionedCount()}}
+                  </span>
+                </a>
+              </li>
+              @endif
+              <li>
+                <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                  @csrf
+                </form>
+                <a id="logoutBtn" class="dropdown-item" href="#">{{('Salir')}}</a>
+              </li>
+            </ul>
+          </li>
+             @endguest
         </div>
       </div>
     </div>
