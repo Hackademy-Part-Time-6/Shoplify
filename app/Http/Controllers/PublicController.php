@@ -25,4 +25,11 @@ class PublicController extends Controller
     public function show(Ad $ad) {
         return view("ad.show", compact('ad'));
     }
+
+
+    public function setLocale($locale)
+    {
+        session()->put('locale', $locale);
+        return redirect()->back();
+    }
 }

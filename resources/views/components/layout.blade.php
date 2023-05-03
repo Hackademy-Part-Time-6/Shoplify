@@ -12,6 +12,11 @@
 
     <x-nav />
 
+
+    <div class="col-12 d-flex justify-content-center mt-5">
+        <h1>{{__('messages.welcome')}}</h1>
+    </div>
+
     @if (session()->has('message'))
         <x-alert :type="session('message')['type']" :message="session('message')['text']" />
     @endif
