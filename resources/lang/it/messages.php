@@ -4,5 +4,5 @@
 // lang/it/messages.php
 
 return [
-    'welcome' => 'Benvenuto nella nostra applicazione',
+    'welcome' => '"Riduci, riutilizza e divertiti risparmiando nel nostro negozio di seconda mano."',
 ];

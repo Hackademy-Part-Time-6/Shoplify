@@ -17,7 +17,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}</h6>
                             <p class="card-text"> {{ $ad->body }}</p>
                             <div class="card-subtitle mb-2">
-                                <strong><a href="{{ route('category.ads',$ad->category) }}">#{{ $category->name}}</a></strong>
+                                <strong><a class="pill-category px-1" href="{{ route('category.ads',$ad->category) }}">#{{__($category->name)}}</a></strong>
                                     <i>{{ $ad->created_at->format('d/m/y')}}</i>
                             </div>
                             <div class="card-subtitle mb-2">

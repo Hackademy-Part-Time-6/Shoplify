@@ -1,3 +1,4 @@
+<div class="container">
 <div>
 
     @if(session()->has('message'))
@@ -48,5 +49,6 @@
                 <button type="submit" class="btn btn-info">{{__('Crear')}}:</button>
             </div>
         </form>
+</div>
 </div>
 

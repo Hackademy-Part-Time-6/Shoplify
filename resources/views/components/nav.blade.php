@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand logo mx-2" href="{{ route('home') }}">Shoplify</a>
+    <div class="container-fluid m-2">
+      <a class="navbar-brand logo mx-3" href="{{ route('home') }}">Shoplify</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,7 +26,7 @@
           </li>
             </ul>
         </ul>
-        <div class="d-flex px-2 list-unstyled">
+        <div class="d-flex px-2 list-unstyled" style="color: azure">
           @guest
               @if (Route::has('login'))
               <li class="nav-item">
@@ -42,8 +42,8 @@
               @else
 
               <li class="nav-item item-nav">
-                <a class="nav-link btn btn-info" href="{{ route('ads.create') }}">
-                  {{__('Nuevo Anuncio')}}
+                <a class="nav-link btn btn-warning" href="{{ route('ads.create') }}">
+                  <i class="fa-regular fa-plus"></i> {{__('Nuevo Anuncio')}}
                 </a>
               </li>
               <li class="nav-item dropdown">
@@ -70,20 +70,29 @@
             </ul>
           </li>
           @endguest
-        </div>
-
-
-        <li class="nav-item">
-          <x-locale lang="es" country="es" />
-        </li>
         
-        <li class="nav-item">
-          <x-locale lang="en" country="gb" />
-        </li>
+
+        <li class="nav-item dropdown mx-2 me-5">
+          <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-flex justify-content-around">
+              <li class="nav-item dropdown-item">
+                <x-locale lang="es" country="es" />
+              </li>
         
-        <li class="nav-item">
-          <x-locale lang="it" country="it" />
+              <li class="nav-item dropdown-item">
+                <x-locale lang="en" country="gb" />
+              </li>
+        
+              <li class="nav-item dropdown-item">
+                <x-locale lang="it" country="it" />
+              </li>
+            </div>
+          </ul>
         </li>
+      </div>
       </div>
     </div>
 </nav>

@@ -3,9 +3,9 @@
 
 /* Estilos para el botón "Iniciar Sesión" */
 .navbar .btn {
-    background-color: #007bff;
+    background-color: rgb(74, 180, 74);
     color: #fff;
-    border-color: #007bff;
+    border-color: rgb(74, 180, 74);
     padding: 6px 12px;
     font-size: 16px;
     line-height: 1.5;
@@ -14,15 +14,14 @@
 }
   
   .navbar .btn:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
     color: #fff;
     scale: 1.1;
 }
 
 .logo {
-    color: green;
+    color: rgb(74, 180, 74);
     font-size: 2em;
+    font-weight: 600;
     transition: all 0.3s ease-in-out;
 }
   
@@ -44,4 +43,58 @@
 
 .link-style {
     text-decoration: none;
+}
+
+body{
+    background-color: #eceff1;
+}
+
+.show-card{
+    border: 1.5px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.show-img{
+    border-radius: 15px;
+}
+
+.title{
+    font-size: 30px;
+}
+.description{
+    font-size: 20px;
+}
+.by{
+    font-size: 20px;
+}
+.pill-category{
+    font-size: 15px;
+    color: #007bff;
+    border: 1px #007bff solid;
+    border-radius: 25px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.price{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.fa-whatsapp{
+    font-size: 20px;
+}
+
+.btn-success {
+    font-size: 1.4em;
+    transition: all 0.3s ease-in-out;
+}
+  
+.btn-success:hover {
+    scale: 1.1;
+}
+
+.welcome{
+    font-weight: 100;
 }
