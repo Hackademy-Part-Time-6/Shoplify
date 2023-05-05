@@ -4,6 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <h1>{{__('messages.welcome')}}</h1>
+                    </div>
                     <h1 class="welcome">{{__('Bienvenido a Shoplify.es')}}</h1>
                 </div>
             </div>
@@ -32,4 +35,7 @@
                 @endforelse
             </div>
         </div>
+        <!--<div class="d-flex justify-content-center">
+            {{$ads->links()}}
+        </div>-->       
 </x-layout>

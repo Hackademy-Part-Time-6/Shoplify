@@ -2,7 +2,7 @@
 <x-layout>
     <x-slot name="title">Rapido - Register</x-slot>
     <!-- ======= FORM LOGIN ======= -->
-    <div class="container-fluid">
+    <div class="container-fluid mt-5" style="height: 65vh">
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <!--FORM TITLE -->
@@ -48,7 +48,7 @@
                     </button>
                 </form>
                 
-                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-info btn-sm ms-2" href="{{route('register')}}">{{__('¡Entra ya!')}}</a> </p>
+                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-info btn-sm ms-2" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
             </div>
         </div>
     </div>

@@ -5,14 +5,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item mx-2">
-            <a class="nav-link item_nav" aria-current="page" href="{{ route('home') }}">{{__('Inicio')}}</a>
-          </li>  
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li>
-          </ul>
-        </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
           <li class="nav-item dropdown mx-2">
             <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{__('Categorías')}}
@@ -30,12 +24,12 @@
           @guest
               @if (Route::has('login'))
               <li class="nav-item">
-                <a class="nav-link item_nav" href="{{route('login')}}"> {{__('Iniciar Sesion')}}</a>
+                <a class="nav-link item_nav ms-2 me-2" href="{{route('login')}}"> {{__('Iniciar Sesion')}}</a>
               </li>
               @endif
               @if (Route::has('register'))
                 <li class="nav-item">
-                  <a class="nav-link item_nav ms-2" href="{{route('register')}}"><span>{{__('Registrar')}}</span></a>
+                  <a class="nav-link item_nav ms-2 me-2" href="{{route('register')}}"><span>{{__('Registrar')}}</span></a>
                 </li>
               @endif
 

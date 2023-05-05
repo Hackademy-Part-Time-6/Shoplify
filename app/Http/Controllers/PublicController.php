@@ -13,7 +13,7 @@ class PublicController extends Controller
 
     public function index () {
 
-        $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->get();
+        $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->paginate(6);
         return view('welcome',compact('ads'));
     }
 

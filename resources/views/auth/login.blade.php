@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="title">Shoplify - {{__('Iniciar Sesion')}}</x-slot>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid mt-5" style="height: 65vh">
+        <div class="row"> 
             <div class="col-12 col-md-6 offset-md-3">
                 <h2 class="form-title space-around">{{__('Iniciar sesion')}}</h2>
                     @if ($errors->any())

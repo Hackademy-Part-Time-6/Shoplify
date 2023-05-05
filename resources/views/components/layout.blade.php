@@ -6,16 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @livewireStyles
-    @vite(['resources/css/app.css'], ['resources/js/app.js'])
+    @vite(['resources/css/app.css'])
 </head>
 <body>
 
     <x-nav />
 
 
-    <div class="col-12 d-flex justify-content-center mt-5">
-        <h1>{{__('messages.welcome')}}</h1>
-    </div>
+    
 
     @if (session()->has('message'))
         <x-alert :type="session('message')['type']" :message="session('message')['text']" />
@@ -33,9 +31,10 @@
     <x-footer />
     </div>
 
+    @vite(['resources/js/app.js'])
     @livewireScripts
+    
     {{$script ?? ''}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/98b4e4a212.js" crossorigin="anonymous"></script>
 </body>
 </html>

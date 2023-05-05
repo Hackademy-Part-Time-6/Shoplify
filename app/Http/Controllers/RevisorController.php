@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {   
-    public function __construct()
-        {
-            $this->middleware('isRevisor');
-        }    
+    //public function __construct()
+      //  {
+        //    $this->middleware('isRevisor');
+       // }    
     public function index()
         {
             $ad = Ad::where('is_accepted',null)
@@ -42,5 +42,11 @@ class RevisorController extends Controller
         {
             Mail::to('admin@rapido.es')->send(new BecomeRevisor(Auth::user()));
             return redirect()->route('home')->withMessage(['type'=>'success','text'=>'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
+        }
+
+    public function makeRevisor(User $user)
+        {
+            Artisan::call('shoplify:makeUserRevisor',['email'=>$user->email]);
+            return redirect()->route('home')->withMessage(['type'=>'success','text'=>'Ya tenemos un compañero más']);
         }
 }
