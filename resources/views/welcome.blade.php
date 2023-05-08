@@ -14,8 +14,11 @@
             @forelse($ads as $ad)
                 <div class="col-12 col-md-4">
                     <div class="card mb-5">
-                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-
+                        @if ($ad->images()->count() > 0)
+                            <img src="{{Storage::url($ad->images()->first()->path)}}" class="card-img-top" alt="...">
+                                @else
+                                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+                                @endif
                         <div class="card-body">
                             <h5 class="card-title"> {{ $ad->title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}{{ __('€')}}</h6>
@@ -35,7 +38,7 @@
                 @endforelse
             </div>
         </div>
-        <!--<div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             {{$ads->links()}}
-        </div>-->       
+        </div>     
 </x-layout>
