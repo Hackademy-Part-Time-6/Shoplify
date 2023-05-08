@@ -43,6 +43,7 @@
 
 .link-style {
     text-decoration: none;
+    color: azure;
 }
 
 body{
@@ -97,4 +98,27 @@ body{
 
 .welcome{
     font-weight: 100;
+}
+
+.social-media{
+    font-size: 30px;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    color: azure;
+}
+
+.up-page{
+    font-size: 6vh;
+    padding: 1vh;
+    border: 1px solid #007bff;
+    color: #007bff;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+footer{
+    letter-spacing: 1px;
 }

@@ -12,7 +12,7 @@
 
     <x-nav />
 
-
+    <a href="#"><i class="fa-solid fa-arrow-up up-page"></i></a>
     
 
     @if (session()->has('message'))
@@ -30,6 +30,8 @@
     <div>
     <x-footer />
     </div>
+
+    
 
     @vite(['resources/js/app.js'])
     @livewireScripts
