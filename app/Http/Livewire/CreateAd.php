@@ -67,7 +67,7 @@ public function store()
         File::deleteDirectory(storage_path('/app/livewire-tmp'));
     }
     
-    session()->flash('message',['type'=>'success', 'text'=>'Ad created successfully']);
+    session()->flash('message', 'Anuncio creado correctamente');
     $this->cleanForm();
 }
 
@@ -81,6 +81,7 @@ public function store()
         $this->category ="";
         $this->body ="";
         $this->price ="";
+        $this->images = [];
     }
 
     public function render()

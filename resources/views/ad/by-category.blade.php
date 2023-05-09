@@ -2,7 +2,7 @@
     <x-slot name="title">Shoplify - {{ $category->name }} ads</x-slot>
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center">
+            <div class="col-12 text-center mt-4">
                 <h1>{{__('Anuncios por categoría')}}: {{__($category->name)}}</h1>
             </div>
         </div>
@@ -29,10 +29,11 @@
                     </div>
                 </div>
                 @empty
-                <div class="col-12 text-center">
-                    <h2>{{__('Uyy.. parece que no hay nada')}}</h2>
-                    <a href="{{ route('ads.create')}}" class="btn btn-success">{{__('Vende tu primer objeto')}}</a>
-                    {{__('o')}} <a href="{{ route('home')}}" class="btn btn-primary">{{__('Vuelve a la página inicial')}}</a>
+                <div class="col-12 text-center" style="height: 55vh">
+                    <h2 class="mb-4">{{__('Uyy.. parece que no hay nada')}}</h2>
+                    <a href="{{ route('ads.create')}}" class="btn btn-success" style="background-color: rgb(74, 180, 74);" >{{__('Vende tu primer objeto')}}</a>
+                    {{__('o')}} 
+                    <a href="{{ route('home')}}" class="btn btn-primary" style="background-color: #007bff;">{{__('Vuelve a la página inicial')}}</a>
                 </div>
                 @endforelse
             </div>

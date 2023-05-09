@@ -12,8 +12,6 @@
                         @foreach ($ad->images as $image)
                             <div class="carousel-item @if($loop->first) active @endif">
                                 <img src="{{$image->getUrl(400,300)}}" class="d-block w-100" alt="...">
-                                @else
-                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
                     </div>
                         @endforeach
                     </div>       

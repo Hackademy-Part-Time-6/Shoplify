@@ -88,11 +88,20 @@ body{
 }
 
 .btn-success {
-    font-size: 1.4em;
+    font-size: 1em;
     transition: all 0.3s ease-in-out;
 }
   
 .btn-success:hover {
+    scale: 1.1;
+}
+
+.btn-primary {
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
+  
+.btn-primary:hover {
     scale: 1.1;
 }
 
@@ -108,9 +117,9 @@ body{
 }
 
 .up-page{
-    font-size: 6vh;
+    font-size: 4vh;
     padding: 1vh;
-    border: 1px solid #007bff;
+    border: 2px outset #007bff;
     color: #007bff;
     border-radius: 20px;
     position: fixed;

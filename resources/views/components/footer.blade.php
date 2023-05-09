@@ -13,14 +13,17 @@
           <p><a style="text-decoration: none; color:azure" href="tel:+34962446931">{{__('Teléfono')}}: +34 962 44 69 31</a></p>
           <p><a style="text-decoration: none; color:azure" href="mailto:support.es@shoplify.com">{{__('Correo electrónico')}}: support.es@shoplify.com</a></p>
         </div>
-        <div class="col-md-6">
-          <h5>{{__('Enlaces')}}</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="link-style">{{__('Inicio')}}</a></li>
-            <li><a href="{{route('revisor.become')}}" class="link-style">{{__('Trabaja con nosotros')}}</a></li>
-            <li><a href="#" class="link-style">{{__('Quienes somos')}}</a></li>
-            <li><a href="#" class="link-style">{{__('Productos')}}</a></li>
-          </ul>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="">
+            <h5>{{__('Enlaces')}}</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="link-style">{{__('Inicio')}}</a></li>
+              <li><a href="{{route('revisor.become')}}" class="link-style">{{__('Trabaja con nosotros')}}</a></li>
+              <li><a href="#" class="link-style">{{__('Quienes somos')}}</a></li>
+              <li><a href="#" class="link-style">{{__('Productos')}}</a></li>
+            </ul>
+          </div>
+          
         </div>
       </div>
     </div>
