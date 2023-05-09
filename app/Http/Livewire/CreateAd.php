@@ -7,6 +7,8 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use App\Jobs\ResizeImage;
+use Illuminate\Support\Facades\File;
 
 class CreateAd extends Component
 {
@@ -40,29 +42,34 @@ class CreateAd extends Component
 
 
     
-    public function store(){
-        // datos validados
-        $validatedData = $this->validate();
-        // busco la categoria
-        $category = Category::find($this->category);
-        
-        // creo el anuncio a partir de la categoria usando la relacion y pasando los datos validados
-        $ad = $category->ads()->create($validatedData);
-        
-        // vuelvo a guardar el anuncio "pasando" por la relacion del usuario
-        Auth::user()->ads()->save($ad);
-        // guardo cada imagen en el db y en el storage
-        if(count($this->images)){
-            foreach ($this->images as $image) {
-                $ad->images()->create([
-                    'path'=>$image->store("images/$ad->id",'public')
-                ]);
-            }
+    
+public function store()
+{
+    // datos validados
+    $validatedData = $this->validate();
+    // busco la categoria
+    $category = Category::find($this->category);
+    
+    // creo el anuncio a partir de la categoria usando la relacion y pasando los datos validados
+    $ad = $category->ads()->create($validatedData);
+    
+    // vuelvo a guardar el anuncio "pasando" por la relacion del usuario
+    Auth::user()->ads()->save($ad);
+    // guardo cada imagen en el db y en el storage
+    if(count($this->images)){
+        $newFileName = "ads/$ad->id";
+        foreach ($this->images as $image) {
+            $newImage = $ad->images()->create([
+                'path'=>$image->store($newFileName,'public')
+            ]);
+            dispatch(new ResizeImage($newImage->path,400,300));
         }
-        
-        session()->flash('message','Ad created successfully');
-        $this->cleanForm();
+        File::deleteDirectory(storage_path('/app/livewire-tmp'));
     }
+    
+    session()->flash('message',['type'=>'success', 'text'=>'Ad created successfully']);
+    $this->cleanForm();
+}
 
     public function updated($propertyName) {
         $this->validateOnly($propertyName);

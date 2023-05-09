@@ -11,7 +11,9 @@
                     <div class="carousel-inner show-img p-4"> 
                         @foreach ($ad->images as $image)
                             <div class="carousel-item @if($loop->first) active @endif">
-                            <img src="{{Storage::url($image->path)}}" class="d-block w-100 show-img" alt="...">
+                                <img src="{{$image->getUrl(400,300)}}" class="d-block w-100" alt="...">
+                                @else
+                                <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
                     </div>
                         @endforeach
                     </div>       
