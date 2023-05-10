@@ -15,10 +15,10 @@
                 <div class="col-12 col-md-4">
                     <div class="card mb-5">
                         @if ($ad->images()->count() > 0)
-                            <img src="{{$ad->images()->first()->getUrl(400,300)}}" class="card-img-top" alt="...">
-                                @else
-                                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
-                                @endif
+                            <img src="{{$ad->images()->first()->getUrl(400,400)}}" class="card-img-top" alt="...">
+                        @else
+                            <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                        @endif
                         <div class="card-body">
                             <h5 class="card-title"> {{ $ad->title }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}{{ __('€')}}</h6>

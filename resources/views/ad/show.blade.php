@@ -8,13 +8,17 @@
                         <button type="button" data-bs-target="#adImages" data-bs-slide-to="{{$i}}" class="@if($i == 0) active @endif" aria-current="true" aria-label="Slide {{$i + 1}}"></button>
                         @endfor
                     </div>
-                    <div class="carousel-inner show-img p-4"> 
-                        @foreach ($ad->images as $image)
+                    <div class="carousel-inner show-img p-4">
+                        @forelse ($ad->images as $image)
                             <div class="carousel-item @if($loop->first) active @endif">
-                                <img src="{{$image->getUrl(400,300)}}" class="d-block w-100" alt="...">
-                    </div>
-                        @endforeach
-                    </div>       
+                                <img src="{{ $image->getUrl(400, 400) }}" class="d-block w-100 show-img" alt="...">
+                            </div>
+                        @empty
+                            <div class="carousel-item active">
+                                <img src="https://via.placeholder.com/400" class="d-block w-100 show-img" alt="...">
+                            </div>
+                        @endforelse
+                    </div>      
                     <button class="carousel-control-prev" type="button" data-bs-target="#adImages" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>

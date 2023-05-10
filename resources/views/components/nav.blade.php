@@ -34,18 +34,22 @@
             @endif
 
             @else
-
-            <li class="nav-item item-nav">
+            <li class="nav-item item-nav d-lg-inline-flex">
               <a class="nav-link btn btn-warning" href="{{ route('ads.create') }}">
                 <i class="fa-regular fa-plus"></i> {{__('Nuevo Anuncio')}}
               </a>
-            </li>
+            </li>            
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle item_nav mx-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {{Auth::user()->name}}
-          </a>
+              <a class="nav-link dropdown-toggle item_nav mx-3 d-none d-sm-block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{Auth::user()->name}}
+              </a>
+              <a class="nav-link item_nav d-sm-none dropdown-item" data-bs-toggle="dropdown">
+                <i class="fa-solid fa-user ms-3 me-3 mt-2" style="font-size: 5vh"></i>
+              </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             @if (Auth::user()->is_revisor)
+            <a class="nav-link item_nav d-sm-none dropdown-item" href="#">
+            </a>
             <li>
               <a class="dropdown-item" href="{{ route('revisor.home') }}">
                 {{__('Revisor')}}
@@ -66,7 +70,7 @@
         @endguest
       
 
-      <li class="nav-item dropdown mx-2 me-5">
+      <li class="nav-item dropdown mx-2 me-5  d-flex align-items-center">
         <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
         </a>

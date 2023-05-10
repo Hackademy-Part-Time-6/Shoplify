@@ -8,13 +8,16 @@
     </div>
     <div class="container py-3">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
+          <div>
           <h5>{{__('Contacto')}}</h5>
           <p><a style="text-decoration: none; color:azure" href="tel:+34962446931">{{__('Teléfono')}}: +34 962 44 69 31</a></p>
           <p><a style="text-decoration: none; color:azure" href="mailto:support.es@shoplify.com">{{__('Correo electrónico')}}: support.es@shoplify.com</a></p>
+          </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div class="">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <div>
             <h5>{{__('Enlaces')}}</h5>
             <ul class="list-unstyled">
               <li><a href="#" class="link-style">{{__('Inicio')}}</a></li>
@@ -23,7 +26,6 @@
               <li><a href="#" class="link-style">{{__('Productos')}}</a></li>
             </ul>
           </div>
-          
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@
                                 <div class="row">
                                     @forelse ($ad->images as $image)
                                     <div class="col-md-4">
-                                        <img src="{{$image->getUrl(400,300)}}" class="img-fluid" alt="...">
+                                        <img src="{{$image->getUrl(400,400)}}" class="img-fluid" alt="...">
                                     </div>
                                 @empty
                                 <div class="col-12">

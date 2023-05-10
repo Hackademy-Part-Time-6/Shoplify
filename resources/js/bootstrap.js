@@ -10,6 +10,7 @@ window.axios = axios;
 import '../css/app.css'
 import * as bootstrap from 'bootstrap'
 import * as logout from './logout'
+import * as mijs from './myjs'
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

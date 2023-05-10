@@ -62,7 +62,7 @@ public function store()
             $newImage = $ad->images()->create([
                 'path'=>$image->store($newFileName,'public')
             ]);
-            dispatch(new ResizeImage($newImage->path,400,300));
+            dispatch(new ResizeImage($newImage->path,400,400));
         }
         File::deleteDirectory(storage_path('/app/livewire-tmp'));
     }
