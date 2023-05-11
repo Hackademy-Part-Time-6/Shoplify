@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
         <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('Categorías')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -29,7 +29,7 @@
             @endif
             @if (Route::has('register'))
               <li class="nav-item">
-                <a class="nav-link item_nav ms-2 me-2" href="{{route('register')}}"><span>{{__('Registrar')}}</span></a>
+                <a class="nav-link item_nav ms-2 me-2" href="{{route('register')}}">{{__('Registrar')}}</a>
               </li>
             @endif
 
@@ -44,7 +44,7 @@
                 {{Auth::user()->name}}
               </a>
               <a class="nav-link item_nav d-sm-none dropdown-item" data-bs-toggle="dropdown">
-                <i class="fa-solid fa-user ms-3 me-3 mt-2" style="font-size: 5vh"></i>
+                <i class="fa-solid fa-user ms-3 me-3 mt-1" style="font-size: 5vh"></i>
               </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             @if (Auth::user()->is_revisor)
@@ -68,28 +68,48 @@
           </ul>
         </li>
         @endguest
-      
 
-      <li class="nav-item dropdown mx-2 me-5  d-flex align-items-center">
-        <a class="nav-link dropdown-toggle item_nav" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <div class="d-flex justify-content-around">
-            <li class="nav-item dropdown-item">
-              <x-locale lang="es" country="es" />
-            </li>
-      
-            <li class="nav-item dropdown-item">
-              <x-locale lang="en" country="gb" />
-            </li>
-      
-            <li class="nav-item dropdown-item">
-              <x-locale lang="it" country="it" />
-            </li>
-          </div>
-        </ul>
-      </li>
+        <li class="nav-item dropdown mx-2 me-5 d-flex align-items-center">
+          <a class="nav-link dropdown-toggle item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
+          </a>
+          
+          <a class="nav-link dropdown item_nav d-sm-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-solid fa-earth-americas mt-1" style="font-size: 5vh"></i>
+          </a>
+          
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="d-flex justify-content-around">
+              <li class="nav-item dropdown-item">
+                <x-locale lang="es" country="es" />
+              </li>
+        
+              <li class="nav-item dropdown-item">
+                <x-locale lang="en" country="gb" />
+              </li>
+        
+              <li class="nav-item dropdown-item">
+                <x-locale lang="it" country="it" />
+              </li>
+            </div>
+          </ul>
+          
+          <ul class="dropdown-menu d-sm-none" aria-labelledby="navbarDropdown">
+            <div>
+              <li class="nav-item dropdown-item">
+                <x-locale lang="es" country="es" />
+              </li>
+        
+              <li class="nav-item dropdown-item">
+                <x-locale lang="en" country="gb" />
+              </li>
+        
+              <li class="nav-item dropdown-item">
+                <x-locale lang="it" country="it" />
+              </li>
+            </div>
+          </ul>
+        </li>
     </div>
     </div>
   </div>
