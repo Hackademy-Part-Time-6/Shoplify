@@ -19,8 +19,8 @@
                 <!--FORM FIELDS -->
                 <form action="/register" method="POST" role="form" class="form-control">
                     @csrf
-                     <!--Name -->
-                     <div class="my-2">
+                    <!--Name -->
+                    <div class="my-2">
                         <input type="text" name="name" id="name" class="form-control forms_field-input"
                         placeholder="{{__('Tu nombre')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
@@ -44,13 +44,13 @@
                     </div>
                     <!--Button-Login-->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-info">
+                        <button type="submit" class="btn btn-info m-2" style="background-color: rgb(74, 180, 74);">
                             {{__('Registrar')}}
                         </button>
                     </div>
                 </form>
                 
-                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-info btn-sm ms-2" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
+                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-info btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
             </div>
         </div>
     </div>

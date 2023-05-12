@@ -12,8 +12,8 @@
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
 }
-  
-  .navbar .btn:hover {
+
+.navbar .btn:hover {
     color: #fff;
     scale: 1.1;
 }
@@ -24,7 +24,7 @@
     font-weight: 600;
     transition: all 0.3s ease-in-out;
 }
-  
+
 .logo:hover {
     color: rgb(74, 180, 74);
     scale: 1.1;
@@ -35,7 +35,7 @@
     font-size: 1.4em;
     transition: all 0.3s ease-in-out;
 }
-  
+
 .item_nav:before {
     display: none;
 }
@@ -95,7 +95,7 @@ body{
     font-size: 1em;
     transition: all 0.3s ease-in-out;
 }
-  
+
 .btn-success:hover {
     scale: 1.1;
 }
@@ -104,7 +104,7 @@ body{
     font-size: 1em;
     transition: all 0.3s ease-in-out;
 }
-  
+
 .btn-primary:hover {
     scale: 1.1;
 }

@@ -11,8 +11,8 @@
         <div class="col-md-4">
           <div>
           <h5>{{__('Contacto')}}</h5>
-          <p><a style="text-decoration: none; color:azure" href="tel:+34962446931">{{__('Teléfono')}}: +34 962 44 69 31</a></p>
-          <p><a style="text-decoration: none; color:azure" href="mailto:support.es@shoplify.com">{{__('Correo electrónico')}}: support.es@shoplify.com</a></p>
+          <p><i class="fa-solid fa-phone"></i><a class="mx-2" style="text-decoration: none; color:azure" href="tel:+34962446931"><!--{{__('Teléfono')}}-->: +34 962 44 69 31</a></p>
+          <p><i class="fa-solid fa-envelope"></i><a class="mx-2" style="text-decoration: none; color:azure" href="mailto:support.es@shoplify.com"><!--{{__('Correo electrónico')}}-->: support.es@shoplify.com</a></p>
           </div>
         </div>
         <div class="col-md-4"></div>

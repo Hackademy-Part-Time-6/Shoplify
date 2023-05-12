@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
         <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('Categorías')}}
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,7 +70,7 @@
         @endguest
 
         <li class="nav-item dropdown mx-2 me-5 d-flex align-items-center">
-          <a class="nav-link dropdown-toggle item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
           </a>
           

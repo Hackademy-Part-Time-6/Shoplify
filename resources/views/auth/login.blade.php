@@ -25,10 +25,10 @@
                     <div class="validate"></div>
                 </div>    
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-info">{{__('Entrar')}}</button>
+                    <button type="submit" class="btn btn-info m-2" style="background-color: rgb(74, 180, 74);">{{__('Entrar')}}</button>
                 </div>
                 </form>
-                <p class="my-3">{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-info btn-sm ms-2" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
+                <p class="my-3" >{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-info btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
             </div>
         </div>
     </div>
