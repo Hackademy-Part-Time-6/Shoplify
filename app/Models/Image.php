@@ -9,8 +9,16 @@ use Illuminate\Support\Facades\Storage;
 class Image extends Model
 {
     use HasFactory;
+    protected $casts = [
+        'labels'=>'array'
+    ];
     protected $fillable = ['path'];
 
+
+    public function getLabels()
+    {
+        return $this->labels? $this->labels : [];
+    }
     public function ads()
     {
         return $this->belongsTo(Ad::class);
