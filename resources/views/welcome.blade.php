@@ -10,6 +10,12 @@
                     <h1 class="welcome">{{__('Bienvenido a Shoplify.es')}}</h1>
                 </div>
             </div>
+            <div class="mb-2">
+                <form action="{{ route('search')}}" method="GET" class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="¿Que necesitas?" aria-label="Search" name="q">
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
         <div class="row">
             @forelse($ads as $ad)
                 <div class="col-12 col-md-4">
