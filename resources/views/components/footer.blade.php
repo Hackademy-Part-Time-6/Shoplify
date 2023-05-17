@@ -1,4 +1,4 @@
-<footer class="bg-dark text-white">
+<footer class="bg-dark text-white mt-5">
     <div class="d-flex justify-content-center" style="border-bottom: 2px solid white">
       <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram social-media mx-3"></i></a>
       <a href="https://twitter.com/?lang=es"><i class="fa-brands fa-square-twitter social-media mx-3"></i></a>

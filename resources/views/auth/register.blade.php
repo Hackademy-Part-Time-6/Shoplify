@@ -44,13 +44,13 @@
                     </div>
                     <!--Button-Login-->
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-info m-2" style="background-color: rgb(74, 180, 74);">
+                        <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">
                             {{__('Registrar')}}
                         </button>
                     </div>
                 </form>
                 
-                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-info btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
+                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
             </div>
         </div>
     </div>

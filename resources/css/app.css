@@ -156,3 +156,44 @@ footer{
 .UNKNOWN {
     color: grey;
 } 
+
+.lupa{
+    border-radius: 3vh; 
+    border: 1px solid rgb(74, 180, 74); 
+    color:rgb(74, 180, 74);
+    transition: all 0.3s ease-in-out;
+}
+
+.lupa:hover{
+    box-shadow: 5px 5px 10px #888888;
+    border: 1px solid rgb(74, 180, 74); 
+    color:rgb(74, 180, 74);
+}
+
+.search{
+    border-radius: 3vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.search:hover{
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.card-2{
+    transition: all 0.4s ease-in-out;
+}
+
+.card-2:hover{
+    scale: 104%;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.show-btn{
+    border: 1px solid rgb(74, 180, 74);
+    border-radius: 3vh;
+    transition: all 0.4s ease-in-out;
+}
+
+.show-btn:hover{
+    background-color: rgb(74, 180, 74);
+}

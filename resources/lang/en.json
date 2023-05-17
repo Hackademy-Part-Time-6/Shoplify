@@ -35,7 +35,7 @@
 "Comprar": "Buy",
 "Iniciar sesión": "Sign In",
 "Tu correo": "Your email",
-"Tu contraseña": "Your Passoword",
+"Tu contraseña": "Your password",
 "¿Aún no eres de los nuestros?": "Your're still not a member?",
 "¡Registrate!": "Sign Up!",
 "¿Ya eres de los nuestros?": "You are already a member?",
@@ -65,5 +65,10 @@
 "Salud": "Health",
 "Violento": "Violent",
 "Excitante": "Spicy",
-"Imágenes": "Images"
+"Imágenes": "Images",
+"Crear tu cuenta": "Register now",
+"Tu nombre": "Your name",
+"Confirma contraseña": "Confirm password",
+"Resultado de la busqueda": "Search results",
+"¿Que necesitas?": "What are you looking for?"
 }
