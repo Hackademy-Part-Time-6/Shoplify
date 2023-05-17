@@ -39,7 +39,7 @@
                 <div class="col-12 d-flex justify-content-center" style="margin-top:20vh; margin-bottom:20vh">
                     <div>
                         <h2 class="mb-4">{{__('Uyy.. parece que no hay nada')}}</h2>
-                        <a href="{{ route('ads.create')}}" class="btn btn-success" style="background-color: rgb(74, 180, 74);">{{__('Vende tu primer objeto')}}</a>
+                        <a href="{{ route('ads.create')}}" class="btn btn-success ms-3" style="background-color: rgb(74, 180, 74);">{{__('Vende tu primer objeto')}}</a>
                         {{__('o')}} 
                         <a href="{{ route('home')}}" class="btn btn-primary" style="background-color: #007bff;">{{__('Vuelve a la página inicial')}}</a>
                     </div>

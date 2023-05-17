@@ -39,6 +39,6 @@ class PublicController extends Controller
         $ads = Ad::search($q)
             ->where('is_accepted', true)
             ->get();
-        return view('search_results', compact('q', 'ads'));
+        return view('search', compact('q', 'ads'));
     }
 }
