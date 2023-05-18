@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <div class="row my-5 show-card">
+        <div class="row my-5 show-card darkcard ">
             <div class="col-12 col-md-6 p-0">
                 <div id="adImages" class="carousel slide" data-bs-ride="true">
                     <div class="carousel-indicators">

@@ -1,3 +1,4 @@
+<body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="myNavbar">
   <div class="container-fluid m-2">
     <a class="navbar-brand logo mx-3" href="{{ route('home') }}">Shoplify</a>
@@ -36,10 +37,10 @@
             @else
             <li class="nav-item item-nav d-lg-inline-flex">
               <a class="nav-link btn btn-warning" href="{{ route('ads.create') }}">
-                <i class="fa-regular fa-plus"></i> {{__('Nuevo Anuncio')}}
+                <i class="fa-regular fa-plus"></i> {{__('Anuncio')}}
               </a>
             </li>            
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="margin-top: 3px">
               <a class="nav-link dropdown-toggle item_nav mx-3 d-none d-sm-block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{Auth::user()->name}}
               </a>
@@ -69,13 +70,13 @@
         </li>
         @endguest
 
-        <li class="nav-item dropdown mx-2 me-5 d-flex align-items-center">
+        <li class="nav-item dropdown mx-2 me-4 d-flex align-items-center">
           <a class="nav-link dropdown item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
           </a>
           
           <a class="nav-link dropdown item_nav d-sm-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-earth-americas mt-1" style="font-size: 5vh"></i>
+            <i class="fa-solid fa-earth-americas mt-1 p-0" style="font-size: 5vh"></i>
           </a>
           
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -110,7 +111,12 @@
             </div>
           </ul>
         </li>
+        <button id="darkModeButton" class="btn-mode">
+          <i id="dayModeIcon" class="fas fa-sun"></i>
+          <i id="nightModeIcon" class="fas fa-moon" style="display: none;"></i>
+        </button>
     </div>
     </div>
   </div>
 </nav>
+</body>

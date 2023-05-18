@@ -2,7 +2,7 @@
 @import '~flag-icon-css/css/flag-icons';
 @import '~bootstrap-icons/font/bootstrap-icons';
 
-/* Estilos para el botón "Iniciar Sesión" */
+
 .navbar .btn {
     background-color: rgb(74, 180, 74);
     color: #fff;
@@ -45,6 +45,28 @@
     color: azure;
     scale: 1.1;
 }
+
+
+
+.btn-mode {
+    background-color: azure;
+    color: #fff;
+    padding: 6px 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 20em;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.fa-sun {
+    color: orange;
+}
+
+.fa-moon {
+    color: rgb(83, 59, 189);
+}
+
 
 .link-style {
     text-decoration: none;
@@ -196,4 +218,41 @@ footer{
 
 .show-btn:hover{
     background-color: rgb(74, 180, 74);
+}
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+
+.darkcard {
+    color: #212529;
+}
+
+.fa-instagram,
+.fa-square-twitter,
+.fa-square-facebook,
+.fa-tiktok,
+.fa-twitch {
+  border-radius: 25%;
+}
+
+.fa-instagram {
+  background: linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.fa-square-twitter {
+  background: linear-gradient(to right, #1da1f2, #1877f2);
+}
+
+.fa-square-facebook {
+  background: linear-gradient(to right, #4267B2, #1B3B75);
+}
+
+.fa-tiktok {
+  background: linear-gradient(to right, #010101, #69C9D0);
+}
+
+.fa-twitch {
+  background: linear-gradient(to right, #6441A4, #2E2149);
 }

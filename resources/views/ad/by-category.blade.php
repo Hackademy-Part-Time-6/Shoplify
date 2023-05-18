@@ -17,7 +17,7 @@
         <div class="row">
             @forelse($ads as $ad)
                 <div class="col-4 col-md-4">
-                    <div class="card card-2 mb-5">
+                    <div class="card darkcard card-2 mb-5">
                         @if ($ad->images()->count() > 0)
                             <img src="{{$ad->images()->first()->getUrl(400,400)}}" class="card-img-top" alt="...">
                         @else

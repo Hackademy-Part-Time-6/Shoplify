@@ -1,4 +1,7 @@
 <x-layout>
+    <body>
+        
+    
     <x-slot name="title">Shoplify -  ads</x-slot>
     
         <div class="container">
@@ -19,7 +22,7 @@
         <div class="row">
             @forelse($ads as $ad)
                 <div class="col-12 col-md-4">
-                    <div class="card card-2 mb-5">
+                    <div class="card darkcard card-2 mb-5">
                         @if ($ad->images()->count() > 0)
                             <img src="{{$ad->images()->first()->getUrl(400,400)}}" class="card-img-top" alt="...">
                         @else
@@ -50,5 +53,6 @@
         </div>
         <div class="d-flex justify-content-center">
             {{$ads->links()}}
-        </div>     
+        </div>  
+    </body>   
 </x-layout>
