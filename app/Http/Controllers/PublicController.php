@@ -6,16 +6,20 @@ use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\Favorite;
+use Illuminate\Support\Facades\Auth;
+
 
 class PublicController extends Controller
 {
     //
 
-    public function index () {
-
-        $ads = Ad::where('is_accepted', true)->orderBy('created_at','desc')->take(6)->paginate(6);
-        return view('welcome',compact('ads'));
-    }
+    public function index()
+{
+    $user = Auth::user();
+    $ads = Ad::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->paginate(6);
+    return view('welcome', compact('user', 'ads'));
+}
 
     public function adsByCategory(Category $category) {
         $ads = $category->ads()->where('is_accepted', true)->latest()->paginate(6);

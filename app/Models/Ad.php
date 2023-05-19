@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Favorite;
 use Laravel\Scout\Searchable;
 
 class Ad extends Model
@@ -43,4 +44,14 @@ class Ad extends Model
             'body'=>$this->body,
         ];
     }
+    public function favorites()
+    {
+        return $this->belongsToMany(Ad::class, 'favorites', 'user_id', 'ad_id')
+                    ->withTimestamps();
+    }
+
+    public function isFavoritedBy(User $user)
+{
+    return $this->favorites()->where('favorites.user_id', $user->id)->exists();
+}
 }

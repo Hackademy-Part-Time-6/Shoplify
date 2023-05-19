@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +24,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/ads/create', [AdController::class,'create'])->name('ads.create');
+
+Route::delete('/ads/{ad}', [AdController::class, 'destroy'])->middleware('auth')->name('ads.destroy');
+
+Route::get('/my-ads', [AdController::class, 'myAds'])->middleware('auth')->name('my-ads');
 
 Route::get('/', [PublicController::class,'index'])->name('home');
 
@@ -46,3 +51,10 @@ Route::get('revisor/{user}/make',[RevisorController::class,'makeRevisor'])->midd
 Route::post('/locale/{locale}', [PublicController::class,'setLocale'])->name('locale.set');
 
 Route::get("/search", [PublicController::class, 'search'])->name('search');
+
+Route::get('/favorites', [FavoriteController::class, 'index'])->middleware('auth')->name('favorites.index');
+
+Route::post('/favorites/{ad}', [FavoriteController::class, 'add'])->middleware('auth')->name('favorites.add');
+
+Route::delete('/favorites/{ad}', [FavoriteController::class, 'remove'])->middleware('auth')->name('favorites.remove');
+

@@ -10,6 +10,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Ad;
+use App\Models\Favorite;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -50,4 +52,15 @@ class User extends Authenticatable
     public function ads () {
         return $this->hasMany(Ad::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function isFavoritedBy(User $user)
+{
+    return $this->favorites()->where('favorites.user_id', $user->id)->exists();
+}
+
 }

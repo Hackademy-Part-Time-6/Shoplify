@@ -34,8 +34,33 @@
                 <div class="title"><b> {{__('Título')}}:</b> {{ $ad->title }}</div>
                 <div class="price"><b> {{__('Precio')}}:</b> {{ $ad->price }}{{ __('€')}}</div>
                 <div class="description"><b> {{__('Descripción')}}:</b> {{ $ad->body }}</div>
-                <div><b> {{__('Publicado el')}}:</b> {{ $ad->created_at->format('d/m/Y') }}></div>
+                <div><b> {{__('Publicado el')}}:</b> {{ $ad->created_at->format('d/m/Y') }}</div>
                 <div class="by"><b> {{__('Por')}}:</b> {{ $ad->user->name }}</div>
+                <div>
+                    @if (Auth::check())
+                    @if (auth()->user()->favorites->contains('ad_id', $ad->id))
+                        <form action="{{ route('favorites.remove', $ad) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" data-ad-id="{{ $ad->id }}">{{ __('Eliminar de favoritos') }}</button>
+                        </form>
+                    @else
+                        <form action="{{ route('favorites.add', $ad) }}" method="POST" class="d-inline">
+                            @csrf
+                            <button type="submit" class="btn btn-primary" data-ad-id="{{ $ad->id }}">{{ __('Guardar como favorito') }}</button>
+                        </form>
+                    @endif
+                @endif
+                </div>
+                <div>
+                @if(Auth::check() && $ad->user_id == Auth::user()->id)
+                    <form action="{{ route('ads.destroy', $ad) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">{{ __('Eliminar Anuncio') }}</button>
+                    </form>
+                @endif
+                </div>
                 <div><a class="badge rounded-pill pill-category" href="{{ route('category.ads',$ad->category) }}">#{{__($ad->category->name )}}</a></div>
                 <div class="text-center"><a href="#" class="btn btn-success"><i class="fa-brands fa-whatsapp"></i> {{__('Contactar a')}} {{ $ad->user->name }}</a></div>
             </div>

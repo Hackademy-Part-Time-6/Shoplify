@@ -1,18 +1,18 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="myNavbar">
-  <div class="container-fluid m-2">
-    <a class="navbar-brand logo mx-3" href="{{ route('home') }}">Shoplify</a>
+  <div class="container-fluid m-2 mb-1">
+    <a class="navbar-brand logo mx-3 mb-1" href="{{ route('home') }}">Shoplify</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
-        <li class="nav-item dropdown mx-2">
+        <li class="nav-item dropdown mx-2 mb-1">
           <a class="nav-link dropdown item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('Categorías')}}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: azure">
             @foreach ($categories as $category )
               <li>
                 <a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{__($category->name)}}</a>
@@ -25,12 +25,12 @@
         @guest
             @if (Route::has('login'))
             <li class="nav-item">
-              <a class="nav-link item_nav ms-2 me-2" href="{{route('login')}}"> {{__('Iniciar Sesion')}}</a>
+              <a class="nav-link item_nav ms-1 me-1" href="{{route('login')}}"> {{__('Iniciar Sesion')}}</a>
             </li>
             @endif
             @if (Route::has('register'))
               <li class="nav-item">
-                <a class="nav-link item_nav ms-2 me-2" href="{{route('register')}}">{{__('Registrar')}}</a>
+                <a class="nav-link item_nav ms-1 me-1" href="{{route('register')}}">{{__('Registrar')}}</a>
               </li>
             @endif
 
@@ -61,6 +61,8 @@
             </li>
             @endif
             <li>
+              <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis anuncios') }}</a>
+              <a class="dropdown-item" href="{{ route('favorites.index') }}">{{ __('Favoritos') }}</a>
               <form id="logoutForm" action="{{route('logout')}}" method="POST">
                 @csrf
               </form>
@@ -69,8 +71,7 @@
           </ul>
         </li>
         @endguest
-
-        <li class="nav-item dropdown mx-2 me-4 d-flex align-items-center">
+        <li class="nav-item dropdown mx-2 me-3 mb-1 d-flex align-items-center">
           <a class="nav-link dropdown item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
           </a>

@@ -65,6 +65,7 @@
 
 .fa-moon {
     color: rgb(83, 59, 189);
+    padding: 2px;
 }
 
 
@@ -182,14 +183,16 @@ footer{
 .lupa{
     border-radius: 3vh; 
     border: 1px solid rgb(74, 180, 74); 
-    color:rgb(74, 180, 74);
+    color:#eceff1;
+    background-color: rgb(74, 180, 74);
     transition: all 0.3s ease-in-out;
 }
 
 .lupa:hover{
     box-shadow: 5px 5px 10px #888888;
     border: 1px solid rgb(74, 180, 74); 
-    color:rgb(74, 180, 74);
+    color:#eceff1;
+    background-color: rgb(74, 180, 74);
 }
 
 .search{
