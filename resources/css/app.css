@@ -222,6 +222,18 @@ footer{
 .show-btn:hover{
     background-color: rgb(74, 180, 74);
 }
+
+.show-btn-delete{
+    border: 1px solid rgb(209, 57, 57);
+    border-radius: 3vh;
+    transition: all 0.4s ease-in-out;
+}
+
+.show-btn-delete:hover{
+    background-color: rgb(209, 83, 83);
+    color: white;
+}
+
 body.dark-mode {
     background-color: #222;
     color: #fff;

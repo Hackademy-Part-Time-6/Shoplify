@@ -66,8 +66,8 @@
                 </div>
             </div>
             @endif
-            <div class="my-3">
-                <button type="submit" class="btn btn-info">{{__('Crear')}}:</button>
+            <div class="mt-4 mb-2 d-flex justify-content-center">
+                <button type="submit" class="btn show-btn">{{__('Crear')}}</button>
             </div>
         </form>
 </div>

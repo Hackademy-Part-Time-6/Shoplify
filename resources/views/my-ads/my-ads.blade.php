@@ -1,9 +1,12 @@
 <x-layout>
     <div class="container">
-        <h1>Mis Anuncios</h1>
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <h1>{{ __('Mis Anuncios')}}</h1>
+        </div>
+            
 
         @if ($ads->isEmpty())
-            <p>No tienes ningún anuncio publicado.</p>
+            <p style="height: 70vh">{{ __('No tienes ningún anuncio publicado')}}.</p>
         @else
             <div class="row">
                 @foreach ($ads as $ad)
@@ -18,15 +21,17 @@
                                 <h5 class="card-title"> {{ $ad->title }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}{{ __('€')}}</h6>
                                 <p class="card-text"> {{ $ad->body }}</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="{{ route("ads.show", $ad) }}" class="btn show-btn">{{__('Mostrar Más')}}</a>
-                                </div>
-                                <div class="d-flex justify-content-center">
-                                    <form action="{{ route('ads.destroy', $ad) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">{{__('Eliminar Anuncio')}}</button>
-                                    </form>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ route("ads.show", $ad) }}" class="btn show-btn">{{__('Mostrar Más')}}</a>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <form action="{{ route('ads.destroy', $ad) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn show-btn-delete">{{__('Eliminar Anuncio')}}<i class="fa-solid fa-trash ms-1"></i></button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

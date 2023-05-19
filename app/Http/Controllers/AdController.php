@@ -19,15 +19,14 @@ class AdController extends Controller
         return view('ad.create');  
     }
 
-    public function destroy(Ad $ad)
-{
-    if (Auth::check() && $ad->user_id == Auth::user()->id) {
-        $ad->delete();
-        return redirect()->route('home')->with('success', __('Anuncio eliminado correctamente'));
-    } else {
-        return redirect()->route('home')->with('error', __('No tienes permiso para eliminar este anuncio'));
+    public function destroy(Ad $ad) {
+        if (Auth::check() && $ad->user_id == Auth::user()->id) {
+            $ad->delete();
+            return redirect()->route('my-ads')->with('success', __('Anuncio eliminado correctamente'));
+        } else {
+            return redirect()->route('home')->with('error', __('No tienes permiso para eliminar este anuncio'));
+        }
     }
-}
 
     public function show(Ad $ad) {
         return view("ad.show", compact('ad'));

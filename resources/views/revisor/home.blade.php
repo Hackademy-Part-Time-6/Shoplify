@@ -57,7 +57,7 @@
                         <div class="m-3">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Usuario')}}</b>
+                                    <b>{{__('Usuario')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     #{{$ad->user->id}} - {{$ad->user->name}} - {{$ad->user->email}}
@@ -66,7 +66,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Título')}}</b>
+                                    <b>{{__('Título')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     {{$ad->title}}
@@ -75,7 +75,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Precio')}}</b>
+                                    <b>{{__('Precio')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     {{$ad->price}}
@@ -84,7 +84,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Descripción:')}}</b>
+                                    <b>{{__('Descripción')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     {{$ad->body}}
@@ -92,7 +92,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Categoría')}}</b>
+                                    <b>{{__('Categoría')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     {{$ad->category->name}}
@@ -101,7 +101,7 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <b>{{__('Publicado el:')}}</b>
+                                    <b>{{__('Publicado el')}}:</b>
                                 </div>
                                 <div class="col-md-9">
                                     {{$ad->created_at}}

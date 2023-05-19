@@ -61,7 +61,7 @@
             </li>
             @endif
             <li>
-              <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis anuncios') }}</a>
+              <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis Anuncios') }}</a>
               <a class="dropdown-item" href="{{ route('favorites.index') }}">{{ __('Favoritos') }}</a>
               <form id="logoutForm" action="{{route('logout')}}" method="POST">
                 @csrf

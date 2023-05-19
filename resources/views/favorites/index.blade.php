@@ -1,9 +1,11 @@
 <x-layout>
     <div class="container">
-        <h1>Mis Favoritos</h1>
+        <div class="d-flex justify-content-center mt-3 mb-3">
+            <h1>{{ __('Mis Favoritos') }}</h1>
+        </div>
 
         @if ($user->favorites->isEmpty())
-            <p style="height: 70vh">No tienes ningún anuncio guardado como favorito.</p>
+            <p style="height: 70vh">{{ __('No tienes ningún anuncio guardado como favorito') }}.</p>
         @else
             <div class="row">
                 @foreach ($user->favorites as $favorite)
@@ -16,16 +18,18 @@
                             @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $favorite->ad->title }}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">{{ $favorite->ad->price }}{{ __('€') }}</h6>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ $favorite->ad->price }}{{__('€')}}</h6>
                                 <p class="card-text">{{ $favorite->ad->body }}</p>
-                                <div class="d-flex justify-content-center">
-                                    <a href="{{ route('ads.show', $favorite->ad) }}" class="btn show-btn">{{ __('Mostrar Más') }}</a>
+                                <div class="d-flex justify-content-between">
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ route('ads.show', $favorite->ad) }}" class="btn show-btn">{{ __('Mostrar Más') }}</a>
+                                    </div>
+                                    <form action="{{ route('favorites.remove', $favorite->ad) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn show-btn-delete" data-ad-id="{{ $favorite->ad->id }}">{{ __('Eliminar de favoritos') }}<i class="fa-solid fa-heart-crack ms-1"></i></button>
+                                    </form>
                                 </div>
-                                <form action="{{ route('favorites.remove', $favorite->ad) }}" method="POST" class="d-inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger" data-ad-id="{{ $favorite->ad->id }}">{{ __('Eliminar de favoritos') }}</button>
-                                </form>
                             </div>
                         </div>
                     </div>
