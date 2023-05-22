@@ -17,28 +17,28 @@
                 </div>
                 @endif
                 <!--FORM FIELDS -->
-                <form action="/register" method="POST" role="form" class="form-control">
+                <form action="/register" method="POST" role="form" class="form-control form-card">
                     @csrf
                     <!--Name -->
                     <div class="my-2">
-                        <input type="text" name="name" id="name" class="form-control forms_field-input"
+                        <input type="text" name="name" id="name" class="form-control forms_field-input form-card-2"
                         placeholder="{{__('Tu nombre')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                     </div>
                     <!--Email -->
                     <div class="my-2">
-                        <input type="email" name="email" id="email" class="form-control forms_field-input"
+                        <input type="email" name="email" id="email" class="form-control forms_field-input form-card-2"
                         placeholder="{{__('Tu correo')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
                         <div class="validate"></div>
                     </div>
                     <!--Password -->
                     <div class=" my-2">
-                        <input type="password" name="password" id="password" class="form-control forms_field-input"
+                        <input type="password" name="password" id="password" class="form-control forms_field-input form-card-2" 
                         placeholder="{{__('Tu contraseña')}}">
                         <div class="validate"></div>
                     </div>
                     <div class=" my-2">
-                        <input type="password" name="password_confirmation" id="password" class="form-control forms_field-input"
+                        <input type="password" name="password_confirmation" id="password" class="form-control forms_field-input form-card-2"
                         placeholder="{{__('Confirma contraseña')}}">
                         <div class="validate"></div>
                     </div>

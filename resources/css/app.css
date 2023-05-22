@@ -282,3 +282,14 @@ body.dark-mode {
     scale: 115%;
     color: red;
 }
+
+.form-card{
+    border: none;
+    background-color: transparent;
+}
+
+.form-card-2{
+    border: none;
+    border-bottom: 1px solid;
+    background-color: transparent;
+}

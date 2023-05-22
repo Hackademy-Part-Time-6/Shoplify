@@ -80,7 +80,7 @@
         </li>
         @endguest
         <li class="nav-item dropdown mx-2 me-3 mb-1 d-flex align-items-center">
-          <a class="nav-link dropdown item_nav d-none d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown item_nav d-none d-md-block d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
           </a>
           
