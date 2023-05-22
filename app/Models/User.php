@@ -63,4 +63,14 @@ class User extends Authenticatable
     return $this->favorites()->where('favorites.user_id', $user->id)->exists();
 }
 
+public function favoriteCount()
+    {
+        return $this->favorites()->count();
+    }
+
+    public function myAdCount()
+    {
+        return $this->ads()->count();
+    }
+
 }

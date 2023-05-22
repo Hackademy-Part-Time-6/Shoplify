@@ -31,14 +31,14 @@ class Ad extends Model
     {
         return Ad::where('is_accepted', null)->count();
     }
-    static public function FavoriteCount()
+    public function favoriteCount()
     {
-        return Ad::where('favorites.user_id', null)->count();
+        return $this->favorites()->count();
     }
 
-    static public function myAdCount(User $user)
+    public function myAdCount()
     {
-        return $user->ads()->count();
+        return $this->ads()->count();
     }
 
     public function images()
