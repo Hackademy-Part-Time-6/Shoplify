@@ -24,9 +24,43 @@
                 <div class="col-12 col-md-4">
                     <div class="card darkcard card-2 mb-5">
                         @if ($ad->images()->count() > 0)
-                            <img src="{{$ad->images()->first()->getUrl(400,400)}}" class="card-img-top" alt="...">
+                        <div style="position: relative;">
+                            @if (Auth::check())
+                            @if (auth()->user()->favorites->contains('ad_id', $ad->id))
+                            <img src="{{ $ad->images()->first()->getUrl(400, 400) }}" class="card-img-top" alt="...">
+                                <form action="{{ route('favorites.remove', $ad) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn fa-solid fa-heart welcome-fav" data-ad-id="{{ $ad->id }}" style="position: absolute; top: 10px; right: 10px;"></button>
+                                </form>
+                            @else
+                            <img src="{{ $ad->images()->first()->getUrl(400, 400) }}" class="card-img-top" alt="...">
+                                <form action="{{ route('favorites.add', $ad) }}" method="POST" class="d-inline">
+                                    @csrf
+                                <button type="submit" class="btn fa-regular fa-heart welcome-fav" data-ad-id="{{ $ad->id }}" style="position: absolute; top: 10px; right: 10px;"></button>
+                            </form>
+                            @endif
+                            @endif
+                        </div>  
                         @else
+                        <div style="position: relative;">
+                            @if (Auth::check())
+                            @if (auth()->user()->favorites->contains('ad_id', $ad->id))
                             <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                                <form action="{{ route('favorites.remove', $ad) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn fa-solid fa-heart welcome-fav" data-ad-id="{{ $ad->id }}" style="position: absolute; top: 10px; right: 10px;"></button>
+                                </form>
+                            @else
+                            <img src="https://via.placeholder.com/400" class="card-img-top" alt="...">
+                                <form action="{{ route('favorites.add', $ad) }}" method="POST" class="d-inline">
+                                    @csrf
+                                <button type="submit" class="btn fa-regular fa-heart welcome-fav" data-ad-id="{{ $ad->id }}" style="position: absolute; top: 10px; right: 10px;"></button>
+                            </form>
+                            @endif
+                            @endif
+                        </div>  
                         @endif
                         <div class="card-body">
                             <h5 class="card-title"> {{ $ad->title }}</h5>

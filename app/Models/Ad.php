@@ -33,10 +33,10 @@ class Ad extends Model
     }
     static public function FavoriteCount()
     {
-        return Ad::whereNull('favorites.user_id')->count();
+        return Ad::where('favorites.user_id', null)->count();
     }
 
-    static public function MyAddCount(User $user)
+    static public function myAdCount(User $user)
     {
         return $user->ads()->count();
     }

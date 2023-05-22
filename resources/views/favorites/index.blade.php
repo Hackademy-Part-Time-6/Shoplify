@@ -5,7 +5,7 @@
         </div>
 
         @if ($user->favorites->isEmpty())
-            <p style="height: 70vh">{{ __('No tienes ningún anuncio guardado como favorito') }}.</p>
+            <p style="height: 70vh" class="text-center">{{ __('No tienes ningún anuncio guardado como favorito') }}.</p>
         @else
             <div class="row">
                 @foreach ($user->favorites as $favorite)

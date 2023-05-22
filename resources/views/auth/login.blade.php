@@ -3,7 +3,7 @@
     <div class="container-fluid mt-5" style="height: 65vh">
         <div class="row"> 
             <div class="col-12 col-md-6 offset-md-3">
-                <h2 class="form-title space-around">{{__('Iniciar sesión')}}</h2>
+                <h2 class="form-title space-around text-center">{{__('Iniciar sesión')}}</h2>
                     @if ($errors->any())
             <div class="alert alert-danger">
                     <ul>
@@ -28,7 +28,7 @@
                     <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">{{__('Entrar')}}</button>
                 </div>
                 </form>
-                <p class="my-3" >{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
+                <p class="my-3 text-center" >{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
             </div>
         </div>
     </div>

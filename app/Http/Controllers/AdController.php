@@ -41,6 +41,5 @@ class AdController extends Controller
     } else {
         return redirect()->route('login');
     }
-        }
-    
+    }
 }

@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
                 <!--FORM TITLE -->
-                <h2 class="form-title space-around">{{__('Crear tu cuenta')}}</h2>
+                <h2 class="form-title space-around text-center">{{__('Crear tu cuenta')}}</h2>
                 @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -50,7 +50,7 @@
                     </div>
                 </form>
                 
-                <p class="my-3">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
+                <p class="my-3 text-center">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
             </div>
         </div>
     </div>

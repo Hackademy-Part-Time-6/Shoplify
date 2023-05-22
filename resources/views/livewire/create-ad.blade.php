@@ -9,10 +9,9 @@
 
 
 
-    <h1>{{__('Crea un nuevo anuncio')}}</h1>
+    <h1 class="text-center">{{__('Crea un nuevo anuncio')}}</h1>
 
     <div>
-
         <form wire:submit.prevent="store">
         @csrf
             <div class="mb-3">

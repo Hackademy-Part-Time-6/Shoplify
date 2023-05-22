@@ -36,7 +36,7 @@
 
             @else
             <li class="nav-item item-nav d-lg-inline-flex">
-              <a class="nav-link btn btn-warning" href="{{ route('ads.create') }}">
+              <a class="nav-link btn" style="background-color: orange; border: 1px solid orange" href="{{ route('ads.create') }}">
                 <i class="fa-regular fa-plus"></i> {{__('Anuncio')}}
               </a>
             </li>            
@@ -61,12 +61,14 @@
             </li>
             @endif
             <li>
-              <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis Anuncios') }}</a>
-              <a class="dropdown-item" href="{{ route('favorites.index') }}">{{ __('Favoritos') }}</a>
+              <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis Anuncios') }}
+              </a>
+              <a class="dropdown-item" href="{{ route('favorites.index') }}">{{ __('Favoritos') }}
+              </a>
               <form id="logoutForm" action="{{route('logout')}}" method="POST">
                 @csrf
               </form>
-              <a id="logoutBtn" class="dropdown-item" href="#">{{__('Salir')}}</a>
+              <a id="logoutBtn" class="dropdown-item" href="#"><i class="fa-solid fa-person-through-window me-2" style="font-size: 1.5vh"></i>{{__('Salir')}}</a>
             </li>
           </ul>
         </li>

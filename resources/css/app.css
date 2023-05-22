@@ -271,3 +271,14 @@ body.dark-mode {
 .fa-twitch {
   background: linear-gradient(to right, #6441A4, #2E2149);
 }
+
+.welcome-fav{
+    color: #d21404;
+    font-size: 4vh;
+    transition: all 0.4s ease-in-out;
+}
+
+.welcome-fav:hover{
+    scale: 115%;
+    color: red;
+}
