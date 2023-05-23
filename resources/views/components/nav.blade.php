@@ -1,18 +1,18 @@
 <body>
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="myNavbar">
+<nav class="navbar navbar-expand-lg bg-transparent navbar-light container" id="myNavbar">
   <div class="container-fluid m-2 mb-1">
     <a class="navbar-brand logo mx-3 mb-1" href="{{ route('home') }}">Shoplify</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+      <ul class="category me-auto mb-2 mb-lg-0">  
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
         <li class="nav-item dropdown mx-2 mb-1">
           <a class="nav-link dropdown item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{__('Categorías')}}
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: azure">
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             @foreach ($categories as $category )
               <li>
                 <a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{__($category->name)}}</a>
@@ -21,7 +21,7 @@
           </ul>
         </li>      
       </ul>
-      <div class="d-flex px-2 list-unstyled" style="color: azure">
+      <div class="d-flex px-2 list-unstyled">
         @guest
             @if (Route::has('login'))
             <li class="nav-item">
@@ -36,7 +36,7 @@
 
             @else
             <li class="nav-item item-nav d-lg-inline-flex">
-              <a class="nav-link btn" style="background-color: orange; border: 1px solid orange; color:black" href="{{ route('ads.create') }}">
+              <a class="nav-link btn" style="background-color: rgb(255, 217, 0); border: 1px solid rgb(255, 217, 0); color:black; font-size: 2vh;" href="{{ route('ads.create') }}">
                 <i class="fa-regular fa-plus"></i> {{__('Anuncio')}}
               </a>
             </li>            

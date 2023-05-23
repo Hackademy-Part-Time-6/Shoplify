@@ -10,7 +10,7 @@ window.axios = axios;
 import '../css/app.css'
 import * as bootstrap from 'bootstrap'
 import * as logout from './logout'
-import * as mijs from './myjs'
+//import * as mijs from './myjs'
 import * as oscurito from './oscurito'
 import * as favorites from './favorites'
 

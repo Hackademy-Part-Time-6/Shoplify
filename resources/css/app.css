@@ -5,7 +5,6 @@
 
 .navbar .btn {
     background-color: rgb(74, 180, 74);
-    color: #fff;
     border-color: rgb(74, 180, 74);
     padding: 6px 12px;
     font-size: 16px;
@@ -15,7 +14,6 @@
 }
 
 .navbar .btn:hover {
-    color: #fff;
     scale: 1.1;
 }
 
@@ -33,7 +31,6 @@
 }
 
 .item_nav {
-    color: azure;
     font-size: 1.4em;
     transition: all 0.3s ease-in-out;
     font-family: 'cabin';
@@ -44,15 +41,17 @@
 }
 
 .item_nav:hover {
-    color: azure;
     scale: 1.1;
 }
 
+.category{
+    list-style: none;
+    padding: 0;
+}
 
 
 .btn-mode {
     background-color: azure;
-    color: #fff;
     padding: 6px 18px;
     font-size: 16px;
     line-height: 1.5;
@@ -212,7 +211,7 @@ footer{
 }
 
 .card-2:hover{
-    scale: 104%;
+    scale: 101%;
     box-shadow: 5px 5px 10px #888888;
 }
 

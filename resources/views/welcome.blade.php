@@ -13,7 +13,7 @@
             </div>
             <div class="mb-3">
                 <form action="{{ route('search')}}" method="GET" class="d-flex" role="search">
-                    <input class="form-control search me-2 p-2" type="search" placeholder="{{ __('¿Que necesitas?')}}" aria-label="Search" name="q">
+                    <input class="form-control search me-2 p-2 ps-3" type="search" placeholder="{{ __('¿Que necesitas?')}}" aria-label="Search" name="q">
                     <button class="btn lupa" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
