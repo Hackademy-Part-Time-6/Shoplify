@@ -42,7 +42,7 @@
                         placeholder="{{__('Confirma contraseña')}}">
                         <div class="validate"></div>
                     </div>
-                    <!--Button-Login-->
+                    <!--Button Register-->
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">
                             {{__('Registrar')}}

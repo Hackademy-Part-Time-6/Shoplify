@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <b>{{__('Imágenes')}}</b>
+                                <b>{{__('Imágenes')}}:</b>
                             </div>
                             <div class="col-12">
                                     @forelse ($ad->images as $image)
@@ -23,21 +23,21 @@
                                     <div class="col-md-1"></div>
                                     <div class="col-md-7 d-flex align-items-center" style="list-style: none; font-size: 2vh">
                                         <div>
-                                            <li class="m-3">{{__('Adulto')}} : <i class="bi bi-circle-fill {{ $image->adult}}"></i> [{{ $image->adult}}]</li>
-                                            <li class="m-3">{{__('Meme')}} : <i class="bi bi-circle-fill {{ $image->spoof}}"></i> [{{ $image->spoof}}]</li>
-                                            <li class="m-3">{{__('Salud')}} : <i class="bi bi-circle-fill {{ $image->medical}}"></i> [{{ $image->medical}}]</li>
-                                            <li class="m-3">{{__('Violento')}} : <i class="bi bi-circle-fill {{ $image->violence}}"></i> [{{ $image->violence}}]</li>
-                                            <li class="m-3">{{__('Excitante')}} : <i class="bi bi-circle-fill {{ $image->racy}}"></i> [{{ $image->racy}}]</li>
+                                            <li class="m-3">{{__('Adulto')}} : <i class="bi bi-circle-fill {{ $image->adult}}"></i></li>
+                                            <li class="m-3">{{__('Meme')}} : <i class="bi bi-circle-fill {{ $image->spoof}}"></i></li>
+                                            <li class="m-3">{{__('Salud')}} : <i class="bi bi-circle-fill {{ $image->medical}}"></i></li>
+                                            <li class="m-3">{{__('Violento')}} : <i class="bi bi-circle-fill {{ $image->violence}}"></i></li>
+                                            <li class="m-3">{{__('Excitante')}} : <i class="bi bi-circle-fill {{ $image->racy}}"></i></li>
                                         </div>
                                             
                                     </div>
                                     <div class="col-md-12">
                                         <div>
-                                            <h3>Labels</h3>
+                                            <h3>{{ __('Etiquetas')}}</h3>
                                             @forelse ($image->getLabels() as $label) 
                                             <a href="#" class="badge rounded-pill pill-category m-1">#{{$label}}</a>
                                             @empty
-                                            No labels
+                                            {{ __('Sin etiquetas')}}
                                             @endforelse
                                        </div>
                                         <div class="mt-2">

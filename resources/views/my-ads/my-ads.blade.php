@@ -26,9 +26,6 @@
                                         <a href="{{ route("ads.show", $ad) }}" class="btn show-btn">{{__('Mostrar Más')}}</a>
                                     </div>
                                     <div class="d-flex justify-content-center">
-                                        <a href="{{ route('ads.edit', $ad->id) }}" class="btn btn-primary">{{ __('Editar') }}</a>
-                                    </div>
-                                    <div class="d-flex justify-content-center">
                                         <form action="{{ route('ads.destroy', $ad) }}" method="POST">
                                             @csrf
                                             @method('DELETE')

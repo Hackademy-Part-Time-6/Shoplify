@@ -59,11 +59,11 @@ class User extends Authenticatable
     }
 
     public function isFavoritedBy(User $user)
-{
+    {
     return $this->favorites()->where('favorites.user_id', $user->id)->exists();
-}
+    }
 
-public function favoriteCount()
+    public function favoriteCount()
     {
         return $this->favorites()->count();
     }

@@ -1,7 +1,7 @@
 <x-layout>
     <div>
         <div class="container">
-            <h1 class="text-center">{{ __('Editar Anuncio') }}</h1>
+            <h1 class="text-center mt-5">{{ __('Editar Anuncio') }}</h1>
 
             <div>
                 <form action="{{ route('ads.update', $ad->id) }}" method="POST" enctype="multipart/form-data">
@@ -9,7 +9,7 @@
                     @method('PUT')
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">{{ __('Título') }}</label>
+                        <label for="title" class="form-label">{{ __('Título') }}:</label>
                         <input type="text" name="title" value="{{ $ad->title }}" class="form-control @error('title') is-invalid @enderror">
                         @error('title')
                             <span class="invalid-feedback" role="alert">

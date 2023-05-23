@@ -22,8 +22,8 @@
             <ul class="list-unstyled">
               <li><a href="#" class="link-style">{{__('Inicio')}}</a></li>
               <li><a href="{{route('revisor.become')}}" class="link-style">{{__('Trabaja con nosotros')}}</a></li>
-              <li><a href="#" class="link-style">{{__('Quienes somos')}}</a></li>
-              <li><a href="#" class="link-style">{{__('Productos')}}</a></li>
+              <li><a href="" class="link-style">{{__('Cookies')}}</a></li>
+              <li><a href="" class="link-style">{{__('Politica de privacidad')}}</a></li>
             </ul>
           </div>
         </div>

@@ -36,7 +36,7 @@
 
             @else
             <li class="nav-item item-nav d-lg-inline-flex">
-              <a class="nav-link btn" style="background-color: orange; border: 1px solid orange" href="{{ route('ads.create') }}">
+              <a class="nav-link btn" style="background-color: orange; border: 1px solid orange; color:black" href="{{ route('ads.create') }}">
                 <i class="fa-regular fa-plus"></i> {{__('Anuncio')}}
               </a>
             </li>            
