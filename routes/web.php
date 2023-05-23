@@ -58,3 +58,9 @@ Route::post('/favorites/{ad}', [FavoriteController::class, 'add'])->middleware('
 
 Route::delete('/favorites/{ad}', [FavoriteController::class, 'remove'])->middleware('auth')->name('favorites.remove');
 
+Route::get('/ads/{ad}/edit', [AdController::class, 'edit'])->middleware('auth')->name('ads.edit');
+
+Route::put('/ads/{ad}', [AdController::class, 'update'])->middleware('auth')->name('ads.update');
+
+
+
