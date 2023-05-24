@@ -60,7 +60,7 @@
                         <button type="submit" class="btn show-btn-delete">{{ __('Eliminar Anuncio') }}<i class="fa-solid fa-trash ms-1"></i></button>
                     </form>
                     <div class="">
-                        <a href="{{ route('ads.edit', $ad->id) }}" class="btn mt-2"><i class="fa-solid fa-gear mt-1 edit-btn"></i></a>
+                        <a href="{{ route('ads.edit', $ad->id) }}" class="btn mt-2"><i class="fa-solid fa-pencil mt-1 edit-btn"></i></a>
                     </div>
                 @endif
                 </div>
@@ -130,7 +130,7 @@
                         <button type="submit" class="btn show-btn-delete m-2">{{ __('Eliminar Anuncio') }}<i class="fa-solid fa-trash ms-1"></i></button>
                     </form>
                     <div class="">
-                        <a href="{{ route('ads.edit', $ad->id) }}" class="btn mt-2"><i class="fa-solid fa-gear" style="font-size: 5vh"></i></a>
+                        <a href="{{ route('ads.edit', $ad->id) }}" class="btn mt-2"><i class="fa-solid fa-pencil" style="font-size: 5vh"></i></a>
                     </div>
                 @endif
                 </div>

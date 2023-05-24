@@ -17,6 +17,26 @@
                     <button class="btn lupa" type="submit"><i class="bi bi-search"></i></button>
                 </form>
             </div>
+            <div class="mt-5 mb-5 d-none d-sm-flex justify-content-around">
+                @foreach ($categories as $category)
+                    <a href="{{ route('category.ads', $category) }}" class="category-icon">
+                        @if ($category->name === 'coches')
+                            <i class="fas fa-car"></i>
+                        @elseif ($category->name === 'motos')
+                            <i class="fas fa-motorcycle"></i>
+                        @elseif ($category->name === 'hogar')
+                            <i class="fas fa-home"></i>
+                        @elseif ($category->name === 'electrónica')
+                            <i class="fas fa-laptop"></i>
+                        @elseif ($category->name === 'móviles')
+                            <i class="fas fa-mobile-alt"></i>
+                        @elseif ($category->name === 'ordenadores')
+                            <i class="fas fa-desktop"></i>
+                        @endif
+                        <span class="category-icon-label text-uppercase">{{__($category->name)}}</span>
+                    </a>
+                @endforeach
+            </div>
             <div class="row">
                 @forelse($ads as $ad)
                     <div class="col-12 col-md-4">
