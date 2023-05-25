@@ -1,0 +1,333 @@
+<!-- Modales -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <x-layout>
+      <x-slot name="title">Shoplify - {{__('Iniciar sesión')}}</x-slot>
+      <div class="container-fluid mt-5" style="height: 65vh">
+          <div class="row"> 
+              <div class="col-12 col-md-6 offset-md-3">
+                  <h2 class="form-title space-around text-center">{{__('Iniciar sesión')}}</h2>
+                      @if ($errors->any())
+              <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                      @endif
+                  
+                  <form action="/login" method="POST" role="form" class="form-control form-card">
+                      @csrf
+                  <div class="space-around my-2">
+                          <input type="email" name="email" id="email" class="form-control forms_field-input form-card-2" placeholder="{{__('Tu correo')}}" data-rule="minlen:4" data-msg="{{__('Por favor introduce al menos 4 caracteres')}}">
+                      <div class="validate"></div>
+                  </div>
+                  <div class=" space-around my-2">
+                      <input type="password" name="password" id="password" class="form-control forms_field-input form-card-2" placeholder="{{__('Tu contraseña')}}">
+                      <div class="validate"></div>
+                  </div>    
+                  <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">{{__('Entrar')}}</button>
+                  </div>
+                  </form>
+                  <p class="my-3 text-center" >{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
+              </div>
+          </div>
+      </div>
+  </x-layout>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <x-layout>
+      <x-slot name="title">Rapido - Register</x-slot>
+      <!-- ======= FORM LOGIN ======= -->
+      <div class="container-fluid mt-5" style="height: 65vh">
+          <div class="row">
+              <div class="col-12 col-md-6 offset-md-3">
+                  <!--FORM TITLE -->
+                  <h2 class="form-title space-around text-center">{{__('Crear tu cuenta')}}</h2>
+                  @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                  @endif
+                  <!--FORM FIELDS -->
+                  <form action="/register" method="POST" role="form" class="form-control form-card">
+                      @csrf
+                      <!--Name -->
+                      <div class="my-2">
+                          <input type="text" name="name" id="name" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Tu nombre')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Email -->
+                      <div class="my-2">
+                          <input type="email" name="email" id="email" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Tu correo')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Password -->
+                      <div class=" my-2">
+                          <input type="password" name="password" id="password" class="form-control forms_field-input form-card-2" 
+                          placeholder="{{__('Tu contraseña')}}">
+                          <div class="validate"></div>
+                      </div>
+                      <div class=" my-2">
+                          <input type="password" name="password_confirmation" id="password" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Confirma contraseña')}}">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Button-Login-->
+                      <div class="d-flex justify-content-center">
+                          <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">
+                              {{__('Registrar')}}
+                          </button>
+                      </div>
+                  </form>
+                  
+                  <p class="my-3 text-center">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
+              </div>
+          </div>
+      </div>
+  </x-layout>
+  </div>
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark" id="myNavbar">
+    <div class="container-fluid m-2 mb-1">
+      <a class="navbar-brand logo mx-3 mb-1" href="{{ route('home') }}">Shoplify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown mx-2 mb-1">
+            <a class="nav-link dropdown item_nav mt-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{__('Categorías')}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: azure">
+              @foreach ($categories as $category )
+                <li>
+                  <a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{__($category->name)}}</a>
+                </li>
+              @endforeach
+            </ul>
+          </li>      
+        </ul>
+        <div class="d-flex px-2 list-unstyled" style="color: azure">
+          @guest
+            @if (Route::has('login'))
+            <li class="nav-item">
+              <a class="nav-link item_nav ms-1 me-1" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">{{__('Iniciar Sesión')}}</a>
+            </li>
+            @endif
+            @if (Route::has('register'))
+              <li class="nav-item">
+                <a class="nav-link item_nav ms-1 me-1" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">{{__('Registrar')}}</a>
+              </li>
+            @endif
+          @else
+            <li class="nav-item item-nav d-lg-inline-flex">
+              <a class="nav-link btn" style="background-color: orange; border: 1px solid orange" href="{{ route('ads.create') }}">
+                <i class="fa-regular fa-plus"></i> {{__('Anuncio')}}
+              </a>
+            </li>            
+            <li class="nav-item dropdown" style="margin-top: 3px">
+              <a class="nav-link dropdown-toggle item_nav mx-3 d-none d-sm-block" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{Auth::user()->name}}
+              </a>
+              <a class="nav-link item_nav d-sm-none dropdown-item" data-bs-toggle="dropdown">
+                <i class="fa-solid fa-user ms-3 me-3 mt-1" style="font-size: 5vh"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @if (Auth::user()->is_revisor)
+                  <a class="nav-link item_nav d-sm-none dropdown-item" href="#"></a>
+                  <li>
+                    <a class="dropdown-item" href="{{ route('revisor.home') }}">
+                      {{__('Revisor')}}
+                      <span class="badge rounded-pill bg-danger">
+                        {{\App\Models\Ad::ToBeRevisionedCount()}}
+                      </span>
+                    </a>
+                  </li>
+                @endif
+                <li>
+                  <a class="dropdown-item" href="{{ route('my-ads') }}">{{ __('Mis Anuncios') }}
+                    <span class="badge rounded-pill bg-danger">
+                      {{ Auth::user()->myAdCount() }}
+                    </span>
+                  </a>
+                  <a class="dropdown-item" href="{{ route('favorites.index') }}">{{ __('Favoritos') }}
+                    <span class="badge rounded-pill bg-danger">
+                      {{ Auth::user()->favoriteCount() }}
+                    </span>
+                  </a>
+                  <form id="logoutForm" action="{{route('logout')}}" method="POST">
+                    @csrf
+                  </form>
+                  <a id="logoutBtn" class="dropdown-item" href="#">{{__('Salir')}}</a>
+                </li>
+              </ul>
+            </li>
+          @endguest
+          <li class="nav-item dropdown mx-2 me-3 mb-1 d-flex align-items-center">
+            <a class="nav-link dropdown item_nav d-none d-md-block d-lg-block" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-earth-americas"></i> {{__('Idiomas')}}
+            </a>
+            <a class="nav-link dropdown item_nav d-sm-none" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-earth-americas mt-1 p-0" style="font-size: 5vh"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="d-flex justify-content-around">
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="es" country="es" />
+                </li>
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="en" country="gb" />
+                </li>
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="it" country="it" />
+                </li>
+              </div>
+            </ul>
+            <ul class="dropdown-menu d-sm-none" aria-labelledby="navbarDropdown">
+              <div>
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="es" country="es" />
+                </li>
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="en" country="gb" />
+                </li>
+                <li class="nav-item dropdown-item">
+                  <x-locale lang="it" country="it" />
+                </li>
+              </div>
+            </ul>
+          </li>
+          <button id="darkModeButton" class="btn-mode">
+            <i id="dayModeIcon" class="fas fa-sun"></i>
+            <i id="nightModeIcon" class="fas fa-moon" style="display: none;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Modales -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <x-layout>
+      <x-slot name="title">Shoplify - {{__('Iniciar sesión')}}</x-slot>
+      <div class="container-fluid mt-5" style="height: 65vh">
+          <div class="row"> 
+              <div class="col-12 col-md-6 offset-md-3">
+                  <h2 class="form-title space-around text-center">{{__('Iniciar sesión')}}</h2>
+                      @if ($errors->any())
+              <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                      @endif
+                  
+                  <form action="/login" method="POST" role="form" class="form-control form-card">
+                      @csrf
+                  <div class="space-around my-2">
+                          <input type="email" name="email" id="email" class="form-control forms_field-input form-card-2" placeholder="{{__('Tu correo')}}" data-rule="minlen:4" data-msg="{{__('Por favor introduce al menos 4 caracteres')}}">
+                      <div class="validate"></div>
+                  </div>
+                  <div class=" space-around my-2">
+                      <input type="password" name="password" id="password" class="form-control forms_field-input form-card-2" placeholder="{{__('Tu contraseña')}}">
+                      <div class="validate"></div>
+                  </div>    
+                  <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">{{__('Entrar')}}</button>
+                  </div>
+                  </form>
+                  <p class="my-3 text-center" >{{__('¿Aún no eres de los nuestros?')}}<a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{ route('register')}}">{{__('¡Registrate!')}}</a></p>
+              </div>
+          </div>
+      </div>
+  </x-layout>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <x-layout>
+      <x-slot name="title">Rapido - Register</x-slot>
+      <!-- ======= FORM LOGIN ======= -->
+      <div class="container-fluid mt-5" style="height: 65vh">
+          <div class="row">
+              <div class="col-12 col-md-6 offset-md-3">
+                  <!--FORM TITLE -->
+                  <h2 class="form-title space-around text-center">{{__('Crear tu cuenta')}}</h2>
+                  @if ($errors->any())
+                  <div class="alert alert-danger">
+                      <ul>
+                          @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                          @endforeach
+                      </ul>
+                  </div>
+                  @endif
+                  <!--FORM FIELDS -->
+                  <form action="/register" method="POST" role="form" class="form-control form-card">
+                      @csrf
+                      <!--Name -->
+                      <div class="my-2">
+                          <input type="text" name="name" id="name" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Tu nombre')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Email -->
+                      <div class="my-2">
+                          <input type="email" name="email" id="email" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Tu correo')}}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Password -->
+                      <div class=" my-2">
+                          <input type="password" name="password" id="password" class="form-control forms_field-input form-card-2" 
+                          placeholder="{{__('Tu contraseña')}}">
+                          <div class="validate"></div>
+                      </div>
+                      <div class=" my-2">
+                          <input type="password" name="password_confirmation" id="password" class="form-control forms_field-input form-card-2"
+                          placeholder="{{__('Confirma contraseña')}}">
+                          <div class="validate"></div>
+                      </div>
+                      <!--Button-Login-->
+                      <div class="d-flex justify-content-center">
+                          <button type="submit" class="btn m-2" style="background-color: rgb(74, 180, 74);">
+                              {{__('Registrar')}}
+                          </button>
+                      </div>
+                  </form>
+                  
+                  <p class="my-3 text-center">{{__('¿Ya eres de los nuestros?')}} <a class="btn btn-sm ms-2" style="background-color: rgb(74, 180, 74);" href="{{route('login')}}">{{__('¡Entra ya!')}}</a> </p>
+              </div>
+          </div>
+      </div>
+  </x-layout>
+  </div>
+
+
+</body>

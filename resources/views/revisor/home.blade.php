@@ -1,4 +1,3 @@
-
 <x-layout>
     <x-slot name='title'>Shoplify - {{__('Inicio')}} {{__('Revisor')}}</x-slot>
     @if($ad)
@@ -15,7 +14,7 @@
                                 <b>{{__('Imágenes')}}:</b>
                             </div>
                             <div class="col-12">
-                                    @forelse ($ad->images as $image)
+                                @forelse ($ad->images as $image)
                                 <div class="row m-2" style="border-bottom: 1px solid #aeb1b3">
                                     <div class="col-md-4">
                                         <img src="{{$image->getUrl(400,400)}}" class="img-fluid m-2" alt="...">
@@ -29,7 +28,6 @@
                                             <li class="m-3">{{__('Violento')}} : <i class="bi bi-circle-fill {{ $image->violence}}"></i></li>
                                             <li class="m-3">{{__('Excitante')}} : <i class="bi bi-circle-fill {{ $image->racy}}"></i></li>
                                         </div>
-                                            
                                     </div>
                                     <div class="col-md-12">
                                         <div>
@@ -39,21 +37,20 @@
                                             @empty
                                             {{ __('Sin etiquetas')}}
                                             @endforelse
-                                       </div>
+                                        </div>
                                         <div class="mt-2">
                                             <p>Id: <b>{{ $image->id}}</b></p>
                                             <p>Url: <b>{{ Storage:: url($image->path)}}</b></p>
                                         </div>
                                     </div>
-                                    </div>
-                                    @empty
-                                    <div class="col-12">
-                                        <b>{{__('No hay imágenes')}}</b>
-                                    </div>
-                                    @endforelse
-                                    </div>
                                 </div>
+                                @empty
+                                <div class="col-12">
+                                    <b>{{__('No hay imágenes')}}</b>
+                                </div>
+                                @endforelse
                             </div>
+                        </div>
                         <div class="m-3">
                             <div class="row">
                                 <div class="col-md-3">
@@ -111,6 +108,7 @@
                     </div>
                 </div>
                 <div class="row my-3">
+                    @if($ad->user_id !== auth()->user()->id)
                     <div class="col-6 text-end">
                         <form action="{{route('revisor.ad.reject',$ad)}}" method="POST">
                             @csrf
@@ -125,6 +123,11 @@
                             <button type="submit" class="btn btn-success">{{__('Aceptar')}}</button>
                         </form>
                     </div>
+                    @else
+                    <div class="col-12 text-center">
+                        <p>{{__('Este anuncio fue creado por ti')}}</p>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

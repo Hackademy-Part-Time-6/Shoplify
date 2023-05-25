@@ -110,8 +110,8 @@
             </div>
         </div>
 
-        <div class="d-flex justify-content-center">
-            {{$ads->links()}}
-        </div>
+    <div class="d-flex justify-content-center">
+        {{ $ads->onEachSide(3)->links('pagination::bootstrap-4', ['lang' => 'es']) }}
+    </div>
     </body>
 </x-layout>
